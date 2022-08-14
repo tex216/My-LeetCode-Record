@@ -5,7 +5,7 @@ public class Solution extends Relation {
     
     public int findCelebrity(int n) {
         int ans = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             if (knows(ans, i)) ans = i;
         }
         
@@ -15,7 +15,7 @@ public class Solution extends Relation {
     
     private boolean isCelebrity(int n, int ans) {
         for (int i = 0; i < n; i++) {
-            if (i == ans) continue;
+            if (i == ans) continue; //avoid comparing itself
             if (knows(ans, i) || !knows(i, ans)) return false;
         }
         return true;
