@@ -1,16 +1,16 @@
 class Solution {
     public int subarraysDivByK(int[] nums, int k) {
-        int[] freq = new int[k];
-        freq[0] = 1;
-        int count = 0, sum = 0;
+        // Calculate the prefix sum and count it.
+        int[] count = new int[k];
+        count[0] = 1;
+        int prefix = 0, ans = 0;
         for (int num : nums) {
-            sum += num;
-            int remainder = sum % k; 
-            // Because -1 % 5 = -1, but we need the positive mod 4
-            if (remainder < 0) remainder += k;
-            count += freq[remainder];
-            freq[remainder]++;
+            prefix = (prefix + num) % k; 
+            // Java has negative modulus, correct to positive
+            if (prefix < 0) prefix += k;
+            ans += count[prefix];
+            count[prefix]++;
         }
-        return count;
+        return ans;
     }
 }
