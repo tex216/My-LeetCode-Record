@@ -12,9 +12,7 @@ class Solution {
             if (map.containsKey(currSum)) {
                 if (i - map.get(currSum) > 1) return true;
             }
-            else {
-                map.put(currSum, i);
-            }
+            else map.put(currSum, i);
         }
         return false;
     }
