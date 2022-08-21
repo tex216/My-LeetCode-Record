@@ -13,12 +13,12 @@ class Solution {
         int[][] ans = new int[map.size()][2];
         int index = 0;
         for (int id : map.keySet()) {
-            ans[index][0] = id;
             int count = 0, sum = 0;
             while (count < 5) {
                 sum += map.get(id).poll();
                 count++;
             }
+            ans[index][0] = id;
             ans[index][1] = sum / 5;
             index++;
         }
