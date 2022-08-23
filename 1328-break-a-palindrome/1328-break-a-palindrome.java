@@ -11,7 +11,7 @@ class Solution {
                 return String.valueOf(arr);
             }
         }
-        
+        //no 'a' exist, change the last one to 'b'
         arr[length - 1] = 'b';
         return String.valueOf(arr);
     }
