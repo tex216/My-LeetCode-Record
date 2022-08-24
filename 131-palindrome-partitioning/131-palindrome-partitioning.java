@@ -1,6 +1,6 @@
 class Solution {
     public List<List<String>> partition(String s) {
-        //backtracking using recurrsion with DFS
+        //backtracking using recursion 
         if(s == null || s.length() == 0) return new ArrayList<>();
         
         List<List<String>> result = new ArrayList<>();
@@ -28,7 +28,7 @@ class Solution {
         
     public boolean isPalindrome(String s) {
         int left = 0, right = s.length()-1;
-        while(left <= right) {
+        while(left < right) {
             if(s.charAt(left) != s.charAt(right))
                 return false;
             left++;
