@@ -16,8 +16,8 @@ class Solution(object):
             return graph
         
         def dfs(start, end, visited, graph, value):
-            if start not in graph or end not in graph or start in visited: return -1;
-            if start == end: return value;
+            if start not in graph or end not in graph or start in visited: return -1
+            if start == end: return value
             visited.append(start)
             for i in range(len(graph[start])):
                 ans = dfs(graph[start][i][0], end, visited, graph, value * graph[start][i][1])
