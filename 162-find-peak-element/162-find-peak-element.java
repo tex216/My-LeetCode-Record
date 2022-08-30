@@ -6,6 +6,6 @@ class Solution {
             if (nums[middle] < nums[middle + 1]) left = middle + 1;
             else right = middle;
         }
-        return left;
+        return right;
     }
 }
