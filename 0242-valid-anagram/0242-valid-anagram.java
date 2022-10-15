@@ -8,6 +8,7 @@ class Solution {
         //return Arrays.equals(s1, t1);
         
         //Method 2: frequency counter, O(n) time, O(1) space
+        //convert string to char[] to speed up
         char[] s1 = s.toCharArray();
         char[] t1 = t.toCharArray();
         int n1 = s1.length, n2 = t1.length;
