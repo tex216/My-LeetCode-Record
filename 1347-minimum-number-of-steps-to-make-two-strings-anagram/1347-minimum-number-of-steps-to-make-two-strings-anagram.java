@@ -1,15 +1,16 @@
 class Solution {
     public int minSteps(String s, String t) {
         int[] count = new int[26];
-        for (int i = 0; i < s.length(); i++) {
-            count[s.charAt(i) - 'a']++;
-            count[t.charAt(i) - 'a']--; //compute difference between s and t
+        for (char c : s.toCharArray()) {
+            ++count[c - 'a'];
         }
         
         int ans = 0;
-        for (int c : count) {
-            if (c > 0) ans += c;
+        for (char c : t.toCharArray()) {
+            if (count[c - 'a'] > 0) --count[c - 'a'];
+            else ans++;
         }
+   
         return ans;
     }
 }
