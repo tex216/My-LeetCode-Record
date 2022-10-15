@@ -6,7 +6,7 @@ class Solution {
         int n1 = t1.length, n2 = t2.length;
         //create dp table, default value is 0
         int[][] dp = new int[n1 + 1][n2 + 1];
-        //main logic
+        //state transition
         for (int i = 1; i <= n1; i++) {
             for (int j = 1; j <= n2; j++) {
                 if (t1[i-1] == t2[j-1]) {
