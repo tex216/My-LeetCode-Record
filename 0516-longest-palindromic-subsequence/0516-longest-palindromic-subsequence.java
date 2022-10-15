@@ -7,6 +7,7 @@ class Solution {
         if (n == 1) return 1;
         
         int[][] dp = new int[n + 2][n + 2];
+        //same idea used with LCS (#516), i iterate forwards, j iterate backwards 
         for (int i = 1; i <= n; i++) {
             for (int j = n; j >= 1; j--) {
                 if (arr[i-1] == arr[j-1]) {
