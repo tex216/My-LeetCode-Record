@@ -24,5 +24,18 @@ class Solution {
             if (count != 0) return false;
         }
         return true;
+        
+        //Follow up: What if the inputs contain unicode characters? How would you adapt your solution to such case? 
+        // Ans: use HashTable instead of a fixed size array
+        
+        // HashMap<Character, Integer> map = new HashMap<>();
+        //for (int i = 0; i < n; i++) {
+        //  map.put(s1[i], map.getOrDefaults(s1[i], 0) + 1);
+        //  map.put(t1[i], map.getOrDefaults(t1[i], 0) - 1);
+        //}
+        //for (char c: map.KeySet()) {
+        //  if (map.get(c) != 0) return false;
+        //}
+        //return true;
     }
 }
