@@ -3,15 +3,15 @@ class Solution {
         Arrays.sort(intervals, (a,b) -> (a[0]-b[0]));
         List<int[]> ans = new ArrayList<>();
         int[] prev = null;
-        for(int[] interval : intervals) {
+        for(int[] i : intervals) {
             //empty or no overlap exist
-            if (ans.isEmpty() || prev[1] < interval[0]) {
-                ans.add(interval);
-                prev = interval;
+            if (ans.isEmpty() || prev[1] < i[0]) {
+                ans.add(i);
+                prev = i;
             }
             //otherwise, overlap exist, do merge
             else {
-                prev[1] = Math.max(prev[1], interval[1]);
+                prev[1] = Math.max(prev[1], i[1]);
             }
         }
         return ans.toArray(new int[ans.size()][2]);
